@@ -59,3 +59,10 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+const orderRoutes = require('./routes/orderRoutes');
+const shipmentRoutes = require('./routes/shipmentRoutes');
+
+// Khai báo dưới các route cũ
+app.use('/api/orders', orderRoutes);
+app.use('/api/shipments', shipmentRoutes);
